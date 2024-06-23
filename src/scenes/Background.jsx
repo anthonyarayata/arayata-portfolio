@@ -3,10 +3,13 @@ import { ReactTyped } from "react-typed";
 import profilePhoto from "../assets/Profile-Image.png";
 
 const Background = () => (
-  <div className="text-center flex item-center flex-row lg:flex-row lg:items-center lg:justify-center lg:space-x-4 p-6 lg:p-8 bg-background text-textPrimary">
-    <div className="text-center lg:text-left">
-      <p className="text-sm">Hello! I am</p>
-      <h1 className="text-2xl lg:text-4xl font-bold">
+  <div className="flex flex-col items-center justify-center min-h-screen w-full bg-background text-textPrimary p-6 lg:p-8">
+    <div className="mt-8">
+      <img src={profilePhoto} className="w-48 lg:w-64 rounded-full" alt="Profile" />
+    </div>
+    <div className="text-center mt-8 lg:mt-16">
+      <p className="text-lg mb-2">Hello! I am</p>
+      <h1 className="text-3xl lg:text-5xl font-bold font-mono">
         <ReactTyped 
           strings={[
             'Anthony Ross Arayata.',
@@ -16,12 +19,9 @@ const Background = () => (
           backSpeed={50}
           loop
         />  
-        </h1>
-      <p className="text-lg lg:text-2xl">I hold a Bachelor of Science degree in Computer Science.</p>
-      <p className="text-xd">I am an aspiring web developer looking to build and develop websites in a professional environment.</p>
-    </div>
-    <div className="mt-4 lg:mt-0">
-        <img src={profilePhoto} className="w-32 lg:w-48" />
+      </h1>
+      <p className="text-xl mb-2">I hold a Bachelor of Science degree in Computer Science.</p>
+      <p className="text-sm max-w-lg mx-auto">I am an aspiring web developer looking to build and develop websites in a professional environment.</p>
     </div>
   </div>
 );
