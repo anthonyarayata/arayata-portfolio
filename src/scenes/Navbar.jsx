@@ -4,7 +4,7 @@ const Navbar = () => (
   <nav className="bg-gray-800 p-4 fixed w-full top-0 z-10 flex justify-between items-center">
     <div className="flex items-center space-x-4">
       <div className="text-white text-xl font-bold">
-        MyName
+        Tony
       </div>
     </div>
     <ul className="flex space-x-8 list-none m-0 p-0">
