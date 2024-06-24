@@ -10,6 +10,13 @@ module.exports = {
         mono: ['monospace'],
         sans: ['Inter', 'system-ui', 'Avenir', 'Helvetica', 'Arial', 'sans-serif'],
       },
+      colors: {
+        white: '#FFFFFF',
+        darkBlue: '#1A202C',
+        mediumBlue: '#2B6CB0',
+        lightBlue: '#BEE3F8',
+        gray: '#718096',
+      },
     },
   },
   plugins: [],
