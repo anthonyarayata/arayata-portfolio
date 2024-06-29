@@ -25,18 +25,18 @@ const App = () => {
   }, []);
 
   return (
-    <div className="flex flex-col">
+    <div className="">
       <Navbar />
-      <section id="background" className="flex-grow">
+      <section id="background" >
         <Background />
       </section>
-      <section id="skills" className="flex-grow">
+      <section id="skills">
         <Skills />
       </section>
-      <section id="projects" className="flex-grow">
+      <section id="projects">
         <Projects />
       </section>
-      <section id="contact" className="flex-grow">
+      <section id="contact">
         <Contact />
       </section>
     </div>

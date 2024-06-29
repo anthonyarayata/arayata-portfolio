@@ -10,24 +10,24 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-darkBlue p-4 fixed w-screen top-0 z-10 flex justify-between items-center">
-      <div className="flex items-center space-x-4">
-        <div className="text-white text-xl font-bold">
+    <nav className="bg-white h-12 fixed shadow opacity-80 w-full top-0 z-10 flex justify-between items-center">
+      <div className="flex items-center">
+        <div className="text-darkBlue sm:text-sm md:text-md lg:text-xl font-bold">
           Tony
         </div>
       </div>
       <div className="md:hidden" onClick={toggleMenu}>
-        {isOpen ? <FaTimes className="text-white" /> : <FaBars className="text-white" />}
+        {isOpen ? <FaTimes className="text-darkBlue" /> : <FaBars className="text-darkBlue" />}
       </div>
-      <ul className={`flex-col md:flex md:flex-row md:space-x-8 list-none m-0 p-0 items-center ${isOpen ? 'flex' : 'hidden'}`}>
-        <li><a href="#background" className="text-white no-underline hover:text-lightBlue">Background</a></li>
-        <li><a href="#skills" className="text-white no-underline hover:text-lightBlue">Skills</a></li>
-        <li><a href="#projects" className="text-white no-underline hover:text-lightBlue">Projects</a></li>
-        <li><a href="#contact" className="text-white no-underline hover:text-lightBlue">Contact</a></li>
+      <ul className={`flex-col md:flex md:flex-row md:space-x-12 list-none m-0 p-0 items-center ${isOpen ? 'flex' : 'hidden'}`}>
+        <li><a href="#background" className="text-darkBlue no-underline hover:text-mediumBlue">Background</a></li>
+        <li><a href="#skills" className="text-darkBlue no-underline hover:text-mediumBlue">Skills</a></li>
+        <li><a href="#projects" className="text-darkBlue no-underline hover:text-mediumtBlue">Projects</a></li>
+        <li><a href="#contact" className="text-darkBlue no-underline hover:text-mediumBlue">Contact</a></li>
         <li>
           <a
             href="https://drive.google.com/uc?export=download&id=1Xw6WBcKTnFBVMfCb0nF_86ysaxmwBj-n"
-            className="bg-lightBlue text-gray hover:text-blue-800 px-4 py-2 rounded-full flex items-center justify-center transition duration-300 ease-in-out"
+            className="bg-mediumBlue text-white hover:text-lightBlue px-4 py-2 rounded-full flex items-center justify-center transition duration-300 ease-in-out"
             download
           >
             <FaGoogleDrive className="mr-2" />
