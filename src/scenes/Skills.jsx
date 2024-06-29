@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaCode, FaServer, FaBrush, FaFigma, FaReact, FaNodeJs, FaHtml5, FaCss3 } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io"; 
 import Collapse from '@mui/material/Collapse';
@@ -26,19 +26,37 @@ const skills = [
 
 const Skills = () => {
   const [expandedIndex, setExpandedIndex] = useState(null);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 768);
+    };
+
+    handleResize(); 
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const handleMouseEnter = (index) => {
-    setExpandedIndex(index);
+    if (!isSmallScreen) {
+      setExpandedIndex(index);
+    }
   };
 
   const handleMouseLeave = () => {
-    setExpandedIndex(null);
+    if (!isSmallScreen) {
+      setExpandedIndex(null);
+    }
   };
 
   return (
-    <section id="skills" className="w-screen min-h-screen p-4 flex items-center justify-center overflow-hidden">
+    <section id="skills" className="w-screen min-h-screen p-16 flex items-center justify-center overflow-hidden">
       <div className="text-center w-full">
-        <h1 className="text-2xl lg:text-4xl font-bold mb-8">Skills</h1>
+        <h1 className="text-xl md:text-2xl font-bold mb-8">Skills</h1>
         <div className="flex flex-wrap justify-center gap-8 md:gap-48">
           {skills.map((skill, index) => (
             <div

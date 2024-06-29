@@ -25,7 +25,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="">
+    <div className="overflow-x-hidden">
       <Navbar />
       <section id="background" >
         <Background />

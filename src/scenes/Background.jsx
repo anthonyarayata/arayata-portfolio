@@ -9,8 +9,8 @@ const Background = () => {
       <img src={profilePhoto} className="w-32 md:w-64 lg:w-80 rounded-full" alt="Profile" />
     </div>
     <div className="text-center mt-8 lg:mt-16">
-      <p className="sm:text-sm md:text-md lg:text-lg mb-2">Hello! I am</p>
-      <h1 className="sm:text-lg md:text-3xl lg:text-5xl font-bold font-mono text-mediumBlue">
+      <p className="text-sm md:text-md lg:text-lg mb-2">Hello! I am</p>
+      <h1 className="text-lg md:text-2xl lg:text-4xl font-bold font-mono text-mediumBlue">
         <ReactTyped 
           strings={[
             'Anthony Ross Arayata.',
@@ -21,7 +21,7 @@ const Background = () => {
           loop
         />  
       </h1>
-      <p className="sm:text-xs text-sm max-w-lg mx-auto">I am an aspiring web developer looking to build and develop websites in a professional environment.</p>
+      <p className="sm:text-xs text-sm max-w-lg justify-center">I am an aspiring web developer looking to build and develop websites in a professional environment.</p>
     </div>
   </div>
   );
