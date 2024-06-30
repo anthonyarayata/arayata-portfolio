@@ -28,7 +28,7 @@ const Contact = () => {
   });
 
   return (
-    <section id="contact" className="w-screen min-h-screen p-4 flex items-center justify-center bg-gray-100">
+    <section id="contact" className="w-screen min-h-screen p-4 mt-4 flex items-center justify-center bg-gray-100">
       <div className="w-screen max-w-6xl">
         <h1 className="text-center text-2xl lg:text-4xl font-bold mb-8">Contact Me</h1>
         <div className="grid grid-cols-8 gap-4">

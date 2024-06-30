@@ -17,10 +17,13 @@ const projects = [
 const Projects = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentGif, setCurrentGif] = useState(null);
+  const [hoveredThumbnail, setHoveredThumbnail] = useState(null);
 
   const handleThumbnailClick = (gif) => {
-    setCurrentGif(gif);
-    setIsModalOpen(true);
+    if (window.innerWidth <= 768) {
+      setCurrentGif(gif);
+      setIsModalOpen(true);
+    }
   };
 
   const closeModal = () => {
@@ -29,8 +32,8 @@ const Projects = () => {
   };
 
   return (
-    <div className='flex w-screen h-screen items-center justify-center'>
-      <section id="projects" className="p-4">
+    <div className='flex w-screen h-screen'>
+      <section id="projects" className="w-full">
         <h1 className="text-center text-xl md:text-4xl font-bold mb-4">Projects</h1>
         <div className="flex flex-wrap justify-center gap-8 mt-4">
           {projects.map((project, index) => (
@@ -38,17 +41,28 @@ const Projects = () => {
               key={index} 
               className="bg-white overflow-hidden w-full md:w-1/2 items-center shadow-lg rounded-lg"
             >
-              <div className="flex flex-col md:flex-row">
-                <div className="flex justify-center md:relative">
-                  <img 
-                    src={project.thumbnail} 
-                    alt={project.title} 
-                    className="w-64 md:w-128 h-auto shadow-lg m-8 transition-opacity duration-300 ease-in-out cursor-pointer" 
+              <div className="grid grid-cols-1 md:grid-cols-10 relative px-8 gap-16">
+                <div className="col-span-1 md:col-span-4 flex justify-center relative">
+                  <div 
+                    className="relative w-64 md:w-80 m-4 md:m-8"
                     onClick={() => handleThumbnailClick(project.gif)}
-                  />
-                  <img src={project.gif} alt={project.title} className="w-64 md:w-128 h-auto absolute top-0 m-8 opacity-0 hover:opacity-100 transition-opacity duration-300 ease-in-out" />
+                    onMouseEnter={() => setHoveredThumbnail(index)}
+                    onMouseLeave={() => setHoveredThumbnail(null)}
+                  >
+                    <img 
+                      src={project.thumbnail} 
+                      alt={project.title} 
+                      className="w-full h-auto shadow-lg transition-opacity duration-500 ease-in-out"
+                    />
+                    <img 
+                      src={project.gif} 
+                      alt={project.title} 
+                      className="w-full h-auto absolute top-0 left-0 transition-opacity duration-500 ease-in-out"
+                      style={{ opacity: hoveredThumbnail === index ? 1 : 0 }}
+                    />
+                  </div>
                 </div>
-                <div className="p-4 flex flex-col justify-between w-full">
+                <div className="col-span-1 md:col-span-6">
                   <div>
                     <h2 className="text-lg md:text-xl text-darkBlue font-bold mb-2">{project.title}</h2>
                     <p className="text-darkBlue text-sm md:text-lg">{project.description}</p>
@@ -67,7 +81,7 @@ const Projects = () => {
       </section>
 
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-darkBlue bg-opacity-75">
           <div className="relative bg-white p-2 rounded-lg">
             <button className="absolute py-1 px-4 top-2 right-2 text-xl text-darkBlue opacity-75" onClick={closeModal}>
               &times;
