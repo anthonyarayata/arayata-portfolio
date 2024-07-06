@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaGoogleDrive, FaBars, FaTimes } from 'react-icons/fa';
-// Import the image if it's in the src/assets directory
-import logo from '../assets/images/logo.png'; // Adjust the path as necessary
+import logo from '../assets/images/logo.png'; 
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,12 +12,13 @@ const Navbar = () => {
 
   return (
     <nav className={`bg-white fixed shadow opacity-95 md:opacity-80 w-screen top-0 z-10 grid grid-cols-8 items-center px-4 transition-height duration-300 ${isOpen ? 'h-auto' : 'h-16'}`}>
-      <div className="col-span-1 flex items-center">
-        <img src={logo} alt="Logo" className="h-10 md:h-12 lg:h-14" /> 
+      <div className="col-span-1 flex items-center"> 
+        <a href="/">
+          <img src={logo} alt="Logo" className="h-4 md:h-12 lg:h-14" /> 
+        </a>
       </div>
       <div className="col-span-6 flex justify-center">
         <ul className={`flex-col md:flex md:flex-row md:space-x-12 list-none m-0 p-4 items-center mx-auto text-sm md:text-md ${isOpen ? 'flex' : 'hidden md:flex'}`}>
-          <li><a href="#background" className="text-darkBlue no-underline hover:text-mediumBlue">Background</a></li>
           <li><a href="#skills" className="text-darkBlue no-underline hover:text-mediumBlue">Skills</a></li>
           <li><a href="#projects" className="text-darkBlue no-underline hover:text-mediumBlue">Projects</a></li>
           <li><a href="#contact" className="text-darkBlue no-underline hover:text-mediumBlue">Contact</a></li>

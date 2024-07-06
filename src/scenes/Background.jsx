@@ -1,31 +1,13 @@
-import React from "react"; 
-import { ReactTyped } from "react-typed";
-import profilePhoto from "../assets/images/Profile-Image.png";
+import React from 'react';
 
 const Background = () => {
   return (
-    <div className="flex flex-col items-center justify-center w-screen h-screen bg-bgcolor text-textPrimary">
-    <div className="mt-8">
-      <img src={profilePhoto} className="w-32 md:w-64 lg:w-80 rounded-full" alt="Profile" />
-    </div>
-    <div className="text-center mt-8 lg:mt-16">
-      <p className="text-sm md:text-md lg:text-lg mb-2">Hello! I am</p>
-      <h1 className="text-lg md:text-2xl lg:text-4xl font-bold font-mono text-mediumBlue">
-        <ReactTyped 
-          strings={[
-            'Anthony Ross Arayata.',
-            'a web developer.'
-          ]}
-          typeSpeed={40}
-          backSpeed={50}
-          loop
-        />  
-      </h1>
-      <p className="sm:text-xs text-sm max-w-lg justify-center">I am an aspiring web developer looking to build and develop websites in a professional environment.</p>
-    </div>
-  </div>
+    <section className="flex flex-col justify-center items-center h-screen w-4/5 bg-white text-darkBlue">
+      <h1 className="text-sm md:text-xl lg:text-2xl font-bold">About Me</h1>
+      <p className="mt-4 text-xs md:text-lg lg:text-xl">I have a B.Sc. in Computer Science. I like building websites and web applications. JavaScript is my go-to language for most projects because of its versatility and efficiency plus I used it a lot when I was an undergrad.</p>
+      <p className="mt-4 text-xs md:text-lg lg:text-xl">Lately, I've been working on JavaScript frameworks and libraries like React.js, as well as backend technologies like Node.js and Express</p>
+    </section>
   );
 };
-
 
 export default Background;
