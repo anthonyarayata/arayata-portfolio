@@ -54,9 +54,9 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="w-screen min-h-screen p-16 flex items-center justify-center overflow-hidden">
+    <section id="skills" className="h-screen w-screen min-h-screen p-16 flex items-center justify-center overflow-hidden">
       <div className="text-center w-full">
-        <h1 className="text-xl md:text-2xl font-bold mb-8">Skills</h1>
+        <h1 className="text-xl md:text-4xl font-bold mb-8">Skills</h1>
         <div className="flex flex-wrap justify-center gap-8 md:gap-48">
           {skills.map((skill, index) => (
             <div

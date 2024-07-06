@@ -23,7 +23,7 @@ const Landing = () => {
   };
 
   return (
-    <div className="relative min-h-screen flex flex-col md:flex-row overflow-hidden">
+    <div className="relative min-h-screen w-full flex flex-col md:flex-row overflow-hidden">
       <div className={`transition-all duration-500 ease-in-out ${showBackground ? (isSmallScreen ? 'h-1/2' : 'w-1/2') : 'w-full h-full'} flex-shrink-0`}>
         <div className="flex flex-col items-center justify-center h-screen bg-bgcolor text-textPrimary relative">
           <div className="mt-8">
@@ -44,15 +44,17 @@ const Landing = () => {
             </h1>
             <p className="sm:text-xs text-sm max-w-lg justify-center">I am a web developer looking to build and develop websites in a professional environment.</p>
           </div>
-          <div className="absolute text-xs md:text-sm bottom-32 md:inset-y-0 right-0 flex items-center pr-4">
-            <p onClick={handleArrowClick} className="text-xl md:text-2xl lg:text-3xl border-none bg-none cursor-pointer">
-              {showBackground ? (isSmallScreen ? <FaArrowUp /> : <FaArrowLeft />) : (isSmallScreen ? <FaArrowDown /> : <FaArrowRight />)} 
-            </p>
-          </div>
         </div>
       </div>
-      <div className={`transition-all duration-500 ease-in-out ${showBackground ? (isSmallScreen ? 'h-1/2' : 'w-1/2') : 'w-0 h-0 md:w-0 md:h-full'} flex-shrink-0`}>
-        <Background />
+      <div className={`transition-all duration-500 ease-in-out ${showBackground ? (isSmallScreen ? 'h-1/2' : 'w-1/2') : 'w-0 h-0 md:w-0 md:h-full'} flex-shrink-0 relative`}>
+        <div className={`${showBackground ? 'opacity-100' : 'opacity-0'} transition-opacity duration-2500 ease-in-out`}>
+          <Background />
+        </div>
+      </div>
+      <div className="absolute right-4 bottom-0  md:top-1/2">
+        <p onClick={handleArrowClick} className="text-xl md:text-2xl lg:text-3xl border-none bg-none cursor-pointer">
+          {showBackground ? (isSmallScreen ? <FaArrowUp /> : <FaArrowRight />) : (isSmallScreen ? <FaArrowDown /> : <FaArrowLeft />)} 
+        </p>
       </div>
     </div>
   );
